@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="../js/script.js"></script>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Home Body -->
+        <div id="homeBody" class="row">
+            <div class="col-12 col-md-12">
+                <h1>Home</h1>
+            </div>
+        </div>
+
+        <!-- LOG IN FORM -->
+        <div id="logInBody" class="row">
+            <div class="col-12 col-md-12">
+                <form enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <label for="usernameLI" class="col-2 col-sm-2 col-form-label">Username</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="usernameLI" name="usernameLI">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="passwordLI" class="col-2 col-sm-2 col-form-label">Password</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="passwordLI" name="passwordLI">
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-2 col-sm-2">
+                            <button type="button" id="logIn" class="btn btn-success">Log In</button>
+                        </div>
+                        <div class="col-2 col-sm-2">
+                            <button type="button" id="signUp" class="btn btn-danger">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- SIGN IN FORM -->
+        <div id="signUpBody" class="row">
+            <div class="col-12 col-md-12">
+                <form enctype="multipart/form-data">
+                    <div class="form-group row">
+                        <label for="name" class="col-2 col-sm-2 col-form-label">Name</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="lastname" class="col-2 col-sm-2 col-form-label">Lastname</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="lastname" name="lastname">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="usernameSU" class="col-2 col-sm-2 col-form-label">Username</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="usernameSU" name="usernameSU">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="passwordSU" class="col-2 col-sm-2 col-form-label">Password</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="passwordSU" name="passwordSU">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="age" class="col-2 col-sm-2 col-form-label">Age</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="age" name="age">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="gender" class="col-2 col-sm-2 col-form-label">Gender</label>
+                        <div class="col-3 col-sm-3">
+                            <input type="text" class="form-control" id="gender" name="gender">
+                        </div>
+                    </div>
+                    <div class="row buttons">
+                        <div class="col-2 col-sm-2">
+                            <button type="button" id="logIn" class="btn btn-success">Accept</button>
+                        </div>
+                        <div class="col-2 col-sm-2">
+                            <button type="button" id="back" class="btn btn-danger">Back</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- NEW WORD FORM -->
+        <div id="newWordBody" class="row">
+            <br>
+            <div class="col-12 col-md-12">
+                <form enctype="multipart/form-data">
+                    <div class="form-group row" id="verbQuestion1">
+                        <h4 class="col-3 col-sm-3">Is it a Verb?</h4>
+                        <div class="col-9 col-sm-9">
+                            <button type="button" id="verbyes1" class="btn btn-primary">Yes</button>
+                            <button type="button" id="verbno1" class="btn btn-danger">No</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="word" class="col-3 col-sm-3 col-form-label">Word</label>
+                        <div class="col-9 col-sm-9">
+                            <input type="text" class="form-control" id="word" name="word">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phonetic" class="col-3 col-sm-3 col-form-label">Phonetic</label>
+                        <div class="col-9 col-sm-9">
+                            <input type="text" class="form-control" id="phonetic" name="phonetic">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="description" class="col-3 col-sm-3 col-form-label">Description</label>
+                        <div class="col-9 col-sm-9">
+                            <textarea class="form-control" id="description" name="description" cols="30"
+                                rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="translation" class="col-3 col-sm-3 col-form-label">Translation</label>
+                        <div class="col-9 col-sm-9">
+                            <input type="text" class="form-control" id="translation" name="translation">
+                        </div>
+                    </div>
+                    <!-- VERB YES -->
+                    <div id="verbYes">
+                        <div class="form-group row">
+                            <label for="pasttense" class="col-3 col-sm-3 col-form-label">Past Tense</label>
+                            <div class="col-9 col-sm-9">
+                                <input type="text" class="form-control" id="pasttense" name="pasttense">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="pastparticipe" class="col-3 col-sm-3 col-form-label">Past Participle</label>
+                            <div class="col-9 col-sm-9">
+                                <input type="text" class="form-control" id="pastparticiple" name="pastparticipe">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row buttons">
+                        <div class="col-9 col-sm-9">
+                            <button type="button" id="newWord" class="btn btn-success">New Word</button>
+                            <button type="button" id="cancel" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
