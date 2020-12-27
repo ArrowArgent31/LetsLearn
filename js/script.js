@@ -1,9 +1,11 @@
 $(document).ready(function () {
-    document.getElementById("homeBody").style.display = "none";
+    document.getElementById("homeBody").style.display = "block";
     document.getElementById("logInBody").style.display = "none";
     document.getElementById("signUpBody").style.display = "none";
-    document.getElementById("newWordBody").style.display = "block";
+    document.getElementById("newWordBody").style.display = "none";
     document.getElementById("verbYes").style.display = "none";
+    document.getElementById("seeWordsBody").style.display = "none";
+
 
 
     //ADD A NEW USER
@@ -14,8 +16,6 @@ $(document).ready(function () {
         document.getElementById("logInBody").style.display = "none";
 
     }
-
-    //ADD A NEW USER
     document.getElementById("back").addEventListener("click", goSignIn);
     //SHOWS THE FORM OF NEW USER
     function goSignIn() {
@@ -23,6 +23,60 @@ $(document).ready(function () {
         document.getElementById("logInBody").style.display = "block";
 
     }
+
+    //SEE FORM TO ADD A NEW WORD
+    document.getElementById("newWord").addEventListener("click", showFormNewWord);
+    function showFormNewWord() {
+        document.getElementById("seeWordsBody").style.display = "none";
+        document.getElementById("newWordBody").style.display = "block";
+    }
+
+    //SHOW HOME
+    document.getElementById("home").addEventListener("click", showHomeBody);
+    function showHomeBody() {
+        document.getElementById("seeWordsBody").style.display = "none";
+        document.getElementById("newWordBody").style.display = "none";
+
+    }
+
+    //SEE WORDS FORM
+    document.getElementById("seeWords").addEventListener("click", seeWordsBody);
+    function seeWordsBody() {
+        document.getElementById("seeWordsBody").style.display = "block";
+        document.getElementById("newWordBody").style.display = "none";
+        seeWords();
+    }
+
+    //FUNCTION TO SEE ALL THE WORDS
+    function seeWords() {
+        $.ajax({
+            type: "POST",
+            url: "../Model/index.php?action=bring",
+            success: function (exist) {
+                if (exist) {
+                    data = JSON.parse(exist);
+                    console.log(data);
+                    let rows = ''
+                    for (let i = 0; i < data.length; i++) {
+                        rows += `
+                        <tr>
+                            <td>${data[i].WORD}</td>
+                            <td>${data[i].PHONETIC}</td>
+                            <td>${data[i].DESCRIPTION}</td>
+                            <td>${data[i].TRANSLATION}</td>
+                            <td>${data[i].PAST_TENSE}</td>
+                            <td>${data[i].PAST_PARTICIPLE}</td>
+                        </tr>
+                        `;
+                    }
+                    document.getElementById("tableWords").innerHTML = rows;
+                }
+            }
+        });
+    }
+
+
+
 
     //FUNCTION TO LOG IN
     document.getElementById("logIn").addEventListener("click", logIn);
@@ -56,15 +110,15 @@ $(document).ready(function () {
     }
 
     //IF THE USER WANTS TO ADD A NEW WORD 
-    document.getElementById("newWord").addEventListener("click", findWord);
+    document.getElementById("addWord").addEventListener("click", findWord);
     //SHOWS THE FORM OF THE WORD
     function addNewWord() {
-        const word = document.getElementById('word').value;
-        const phonetic = document.getElementById('phonetic').value;
-        const description = document.getElementById('description').value;
-        const translation = document.getElementById('translation').value;
-        const pasttense = document.getElementById('pasttense').value;
-        const pastparticiple = document.getElementById('pastparticiple').value;
+        const word = document.getElementById('word').value.toUpperCase();
+        const phonetic = document.getElementById('phonetic').value.toUpperCase();
+        const description = document.getElementById('description').value.toUpperCase();
+        const translation = document.getElementById('translation').value.toUpperCase();
+        const pasttense = document.getElementById('pasttense').value.toUpperCase();
+        const pastparticiple = document.getElementById('pastparticiple').value.toUpperCase();
         const idUser = 1;
 
         form_data = new FormData();//Los objetos FormData permiten compilar un conjunto 
@@ -144,7 +198,6 @@ $(document).ready(function () {
     //SHOWS THE FORM OF THE WORD
     function cancelFunctions() {
         document.getElementById("homeBody").style.display = "block";
-        document.getElementById("newWord").style.display = "block";
         document.getElementById("newWordBody").style.display = "none";
     }
 

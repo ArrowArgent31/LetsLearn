@@ -12,7 +12,14 @@
     <script src="../js/script.js"></script>
 
     <style>
-
+        table,
+        th,
+        tr,
+        td {
+            border: 1px solid;
+            height: 60px;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -22,7 +29,12 @@
         <!-- Home Body -->
         <div id="homeBody" class="row">
             <div class="col-12 col-md-12">
-                <h1>Home</h1>
+            </div>
+            <div class="col-12 col-md-12">
+                <img src="./img/letslearn.png" alt="" width="250" height="160">&nbsp;&nbsp;
+                <button type="button" id="home" class="btn btn-dark">Home</button>&nbsp;&nbsp;
+                <button type="button" id="seeWords" class="btn btn-dark">See Words</button>&nbsp;&nbsp;
+                <button type="button" id="newWord" class="btn btn-dark">New Word</button>
             </div>
         </div>
 
@@ -108,10 +120,30 @@
             </div>
         </div>
 
+        <!-- NEW WORD FORM -->
+        <div id="seeWordsBody" class="row">
+            <div class="col-12 col-md-12">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Phonetic</th>
+                            <th>Description</th>
+                            <th>Translation</th>
+                            <th>Past Tense</th>
+                            <th>Past Participle</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableWords">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
 
         <!-- NEW WORD FORM -->
         <div id="newWordBody" class="row">
-            <br>
             <div class="col-12 col-md-12">
                 <form enctype="multipart/form-data">
                     <div class="form-group row" id="verbQuestion1">
@@ -156,7 +188,8 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="pastparticipe" class="col-3 col-sm-3 col-form-label">Past Participle</label>
+                            <label for="pastparticipe" class="col-3 col-sm-3 col-form-label">Past
+                                Participle</label>
                             <div class="col-9 col-sm-9">
                                 <input type="text" class="form-control" id="pastparticiple" name="pastparticipe">
                             </div>
@@ -165,7 +198,7 @@
 
                     <div class="row buttons">
                         <div class="col-9 col-sm-9">
-                            <button type="button" id="newWord" class="btn btn-success">New Word</button>
+                            <button type="button" id="addWord" class="btn btn-success">Add Word</button>
                             <button type="button" id="cancel" class="btn btn-danger">Cancel</button>
                         </div>
                     </div>

@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && $action == 'logIn') {
     echo $rows;
 } else if ($_SERVER['REQUEST_METHOD'] == 'POST' && $action == 'bring') {
     $con = Connection();
-    $sql = "SELECT * from learning order by WORD asc;";
+    $sql = "SELECT * from words order by WORD asc;";
     $stmt = $con->prepare($sql);
     $result = $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
